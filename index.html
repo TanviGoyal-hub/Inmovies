@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iMovies | Book Your Movie Tickets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Special Offer Popup -->
+  <dialog id="offerPopup" class="offer-popup">
+    <button id="closeOffer" class="close-offer" aria-label="Close offer">&times;</button>
+    <p class="offer-label">🎬 iMOVIES SPECIAL OFFER</p>
+    <h2>Ocean of Dreams</h2>
+    <p class="offer-subtitle">Your next adventure awaits!</p>
+    <div class="offer-discount">10% OFF</div>
+    <p>Book 2 or more tickets and save on your movie night!</p>
+    <button id="claimOffer" class="claim-offer">Explore Movies →</button>
+  </dialog>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a class="logo" href="#home">iMovies<span>.</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#movies">Movies</a>
+      <a href="#food">Food &amp; Drinks</a>
+      <a href="#bookings">My Bookings</a>
+    </nav>
+    <a class="nav-button" href="#movies">Book Tickets</a>
+  </header>
+
+  <main>
+    <!-- Home Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR NEXT MOVIE NIGHT STARTS HERE</p>
+        <h1>Lights. Camera.<br><span>Your Seat.</span></h1>
+        <p class="hero-text">
+          Discover amazing movies, choose your showtime,
+          and book your favourite seats with ease.
+        </p>
+        <a href="#movies" class="primary-button">Explore Movies →</a>
+      </div>
+
+      <div class="hero-art">
+        <div class="ticket">iM<br><span>YOUR MOVIE. YOUR MOMENT.</span></div>
+        <div class="film-circle">NOW<br>SHOWING</div>
+      </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section class="movies-section" id="movies">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PICK YOUR NEXT ADVENTURE</p>
+          <h2>Now Showing</h2>
+        </div>
+        <span class="movie-count">Choose a movie you love</span>
+      </div>
+
+      <div class="movie-grid" id="movieGrid"></div>
+    </section>
+
+    <!-- Food and Drinks Section -->
+    <section class="food-section" id="food">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">A LITTLE TREAT FOR YOUR MOVIE NIGHT</p>
+          <h2>Food &amp; Drinks</h2>
+        </div>
+        <span class="movie-count">Your cinema favourites</span>
+      </div>
+
+      <div class="food-grid">
+        <article class="food-card">
+          <img class="food-image"
+            src="https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=700&q=80"
+            alt="Popcorn">
+          <div class="food-info">
+            <h3>Classic Popcorn</h3>
+            <p>Fresh, buttery movie-night popcorn.</p>
+            <div class="food-bottom">
+              <span class="food-price">₹120</span>
+              <button class="add-food-button" onclick="addFood('Classic Popcorn', 120)">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <img class="food-image"
+            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80"
+            alt="Pizza">
+          <div class="food-info">
+            <h3>Cheesy Pizza</h3>
+            <p>A cheesy treat for your movie marathon.</p>
+            <div class="food-bottom">
+              <span class="food-price">₹220</span>
+              <button class="add-food-button" onclick="addFood('Cheesy Pizza', 220)">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <img class="food-image"
+            src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80"
+            alt="Grilled Sandwich"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+
+          <div class="food-image food-fallback" style="display:none;">🥪</div>
+
+          <div class="food-info">
+            <h3>Grilled Sandwich</h3>
+            <p>Toasty, tasty and perfect for sharing.</p>
+            <div class="food-bottom">
+              <span class="food-price">₹140</span>
+              <button class="add-food-button" onclick="addFood('Grilled Sandwich', 140)">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Food Cart -->
+      <div id="foodCart" class="food-cart">
+        <h3>Your Food Cart 🛒</h3>
+        <div id="cartItems">Your cart is empty.</div>
+        <h3 id="cartTotal">Total: ₹0</h3>
+      </div>
+    </section>
+
+    <!-- Bookings Section -->
+    <section class="booking-section" id="bookings">
+      <p class="eyebrow">YOUR PLANS, ALL IN ONE PLACE</p>
+      <h2>My Bookings</h2>
+      <div id="bookingList">
+        <p>Your bookings will appear here after you reserve tickets.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#home">iMovies<span>.</span></a>
+    <p>Made for movie lovers. 🎬</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
